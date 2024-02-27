@@ -1,187 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./dist/output.css">
-    <script src="https://kit.fontawesome.com/5b25c930f3.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PortFolio</title>
+  <link rel="stylesheet" href="./dist/output.css">
+  <script src="https://kit.fontawesome.com/5b25c930f3.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="bg-gradient-to-tr from bg-slate-700 via-slate-600 ...">
-    <!-- Navbar -->
-    <nav class="relative container mx-auto p-6">
-      <div class="flex items-center justify-end">
-        <div class="pt-2 object-contain">
-          <img src="" alt="" />
-        </div>
-        <div class="hidden md:flex space-x-6">
-          <a href="#main-content" class="text-white hover:border-b-2 hover:border-blue-300 active:text-blue-200">Home</a>
-          <a href="#skills" class="text-white hover:border-b-2 hover:border-blue-300 active:text-blue-200">Skills</a>
-          <a href="#exp-container"
-            class="text-white hover:border-b-2 hover:border-blue-300 active:text-blue-200">Experience</a>
-          <a href="#contact-me"
-            class="text-white hover:border-b-2 hover:border-blue-300 active:text-blue-200">Contact-Me</a>
-          <a href="#" class="text-white hover:border-b-2 hover:border-blue-300 active:text-blue-200">Resume</a>
-        </div>
-        <button id="ham" class="ml-6 block md:hidden ">
-          <svg style="fill:white;min-height:30px;width:auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path
-              d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
-          </svg>
-          <div class="md:hidden">
-            <div id="menu"
-              class="absolute rounded-2xl hidden text-black border-2 flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
-              <a href="#">Home</a>
-              <a href="#">Skills</a>
-              <a href="#">Experience</a>
-              <a href="#">Achievements</a>
-              <a href="#">Resume</a>
-            </div>
+  <!-- Navbar -->
+  <nav class="relative container mx-auto p-6">
+    <div class="flex items-center justify-end">
+      <div class="pt-2 object-contain">
+        <img src="" alt="" />
+      </div>
+      <div class="hidden md:flex space-x-6">
+        <a href="#main-content" class="text-white hover:border-b-2 hover:border-blue-300 active:text-blue-200">Home</a>
+        <a href="#skills" class="text-white hover:border-b-2 hover:border-blue-300 active:text-blue-200">Skills</a>
+        <a href="#exp-container"
+          class="text-white hover:border-b-2 hover:border-blue-300 active:text-blue-200">Experience</a>
+        <a href="#contact-me"
+          class="text-white hover:border-b-2 hover:border-blue-300 active:text-blue-200">Contact-Me</a>
+        <a href="#" class="text-white hover:border-b-2 hover:border-blue-300 active:text-blue-200">Resume</a>
+      </div>
+      <button id="ham" class="ml-6 block md:hidden ">
+        <svg style="fill:white;min-height:30px;width:auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path
+            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+        </svg>
+        <div class="md:hidden">
+          <div id="menu"
+            class="absolute rounded-2xl hidden text-black border-2 flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+            <a href="#">Home</a>
+            <a href="#">Skills</a>
+            <a href="#">Experience</a>
+            <a href="#">Achievements</a>
+            <a href="#">Resume</a>
           </div>
-    </nav>
-    <!--Hero-Section-->
-    <main class="bg-gray-700 flex flex-col-reverse lg:flex-row lg:overflow-hidden">
-      <div id="main-content" class="p-3 mt-0 ">
-        <h1 class="text-white text-center text-4xl lg:pt-40 lg:ml-15 lg:text-5xl lg:text-left  lg:ml-20">Hello Guys, I am
-        </h1>
-        <h1 class="text-white mt-5 text-center uppercase text-5xl lg:ml-15 lg:text-7xl lg:text-left  lg:ml-20">Swapnil jha
-        </h1>
-        <p class="text-yellow-50 mt-5 text-center flex-wrap m-4 lg:pl-20 lg:mt-7 lg:text-left ">I design Web Pages,
-          sit amet consectetur adipisicing elit. <br>Maiores commodi deleniti maxime veniam! Voluptatibus,
-          explicabo.</p>
-        <div id="button" class="lg:m-16">
-          <button class="m-16 rounded-2xl border-2 text-gray-50 bg-slate-800 p-3 lg:m-10 hover:bg-slate-700"><a
-              href="#contact-me">Contact Me</a></button>
-          <button class="rounded-2xl border-2 text-gray-50 bg-slate-800 p-3 hover:bg-slate-700">Learn
-            More</button>
         </div>
+  </nav>
+  <!--Hero-Section-->
+  <main class="bg-gray-700 flex flex-col-reverse lg:flex-row lg:overflow-hidden">
+    <div id="main-content" class="p-3 mt-0 ">
+      <h1 class="text-white text-center text-4xl lg:pt-40 lg:ml-15 lg:text-5xl lg:text-left  lg:ml-20">Hello Guys, I am
+      </h1>
+      <h1 class="text-white mt-5 text-center uppercase text-5xl lg:ml-15 lg:text-7xl lg:text-left  lg:ml-20">Swapnil jha
+      </h1>
+      <p class="text-yellow-50 mt-5 text-center flex-wrap m-4 lg:pl-20 lg:mt-7 lg:text-left ">I design Web Pages,
+        sit amet consectetur adipisicing elit. <br>Maiores commodi deleniti maxime veniam! Voluptatibus,
+        explicabo.</p>
+      <div id="button" class="lg:m-16">
+        <button class="m-16 rounded-2xl border-2 text-gray-50 bg-slate-800 p-3 lg:m-10 hover:bg-slate-700"><a
+            href="#contact-me">Contact Me</a></button>
+        <button class="rounded-2xl border-2 text-gray-50 bg-slate-800 p-3 hover:bg-slate-700">Learn
+          More</button>
       </div>
-      <div id="main-image" class="overflow-hidden">
-        <img src="./images/undraw_code_thinking_re_gka2.svg" alt="main image"
-          class="m-0 h-screen lg:rounded-2xl lg:h-64 lg:ml-44 lg:mt-32">
-      </div>
-    </main>
-  
-    <!-- Skills -->
-    <section id="skills">
-      <div class=" max-w-4xl lg:max-w-6xl px-5 mx-auto text-center">
-        <h2 class="text-4xl text-white text-center">
-          My Skills
-        </h2>
-        <div class="flex flex-col md:flex-row lg:space-y-0 mt-20 md:space-x-6 align-top">
-          <div class="flex flex-col mb-4 md:mb-0  items-center p-6 space-y-6 rounded-lg bg-slate-300 md:w-1/4">
-            <img src="images/undraw_inspiration_re_ivlv.svg" alt="" class="md:h-1/2">
+    </div>
+    <div id="main-image" class="overflow-hidden">
+      <img src="./images/undraw_code_thinking_re_gka2.svg" alt="main image"
+        class="m-0 h-screen lg:rounded-2xl lg:h-64 lg:ml-44 lg:mt-32">
+    </div>
+  </main>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class=" max-w-4xl lg:max-w-6xl px-5 mx-auto text-center">
+      <h2 class="text-4xl text-white text-center">
+        My Skills
+      </h2>
+      <div class="flex flex-col md:flex-row lg:space-y-0 mt-20 md:space-x-6 align-top">
+        <div class="flex flex-col mb-4 md:mb-0  items-center p-6 space-y-6 rounded-lg bg-slate-300 md:w-1/4">
+          <img src="images/undraw_inspiration_re_ivlv.svg" alt="" class="md:h-1/2">
+          <a href="./idea.html">
             <h5 class="text-lg font-bold">Web Development</h5>
-            <p class="text-sm text-grey">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, autem.
-            </p>
-          </div>
-          <div class="flex flex-col mb-4 md:mb-0 items-center p-6 space-y-6 rounded-lg bg-slate-300 md:w-1/4">
-            <img src="images/undraw_version_control_re_mg66.svg" alt="" class="md:h-1/2">
-            <h5 class="text-lg font-bold">Coding</h5>
-            <p class="text-sm text-grey">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, autem.
-            </p>
-          </div>
-          <div class="flex flex-col mb-4 md:mb-0 items-center p-6 space-y-6 rounded-lg bg-slate-300 md:w-1/4">
-            <img src="images/undraw_inspiration_re_ivlv.svg" alt="" class="md:h-1/2">
-            <h5 class="text-lg font-bold">Graphic design</h5>
-            <p class="text-sm text-grey">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, autem.
-            </p>
-          </div>
-          <div class="flex flex-col mb-4 md:mb-0 items-center p-6 space-y-6 rounded-lg bg-slate-300 md:w-1/4">
-            <img src="images/undraw_books_re_8gea.svg" alt="" class="md:h-1/2">
-            <h5 class="text-lg font-bold">Content writing</h5>
-            <p class="text-sm text-grey">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, autem.
-            </p>
-          </div>
+          </a>
+          <p class="text-sm text-grey">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, autem.
+          </p>
         </div>
-      </div>
-    </section>
-  
-  
-    <!--Experience-->
-    <h1 class="text-xl text-slate-200 text-center mt-24 mb-8 lg:text-4xl">This isn't my first Rodeo :)</h1>
-    <div id="exp-container" class=" relative m-2 lg:m-4">
-      <div id="scroll" class="h-3/4 w-0 absolute border-2 lg:left-1/2 top-14 border-slate-300  border-dotted">
-        <div class=" h-4 w-4 bg-slate-300 text-lg rounded-full -top-1 absolute lg:right-1/2"></div>
-        <div class=" h-4 w-4 bg-slate-300 text-lg rounded-full absolute top-1/2 lg:left-1/2"></div>
-        <div class=" h-4 w-4 bg-slate-300 text-lg rounded-full absolute -bottom-1 lg:right-1/2"></div>
-      </div>
-      <div class="m-1 ml-3 relative bg-cyan-900 rounded-lg text-white h-full p-4 lg:w-1/3 lg:left-48">
-        <img>
-        <h1 class=""> Experience1 </h1>
-        <p class>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat minima totamrepellat quis deserunt
-          impedit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat minima totamrepellat quis deserunt
-          impedit.</p>
-      </div>
-      <div
-        class="m-1 ml-3 mb-4 mt-4 relative bg-slate-500 rounded-lg text-white h-full p-4 lg:w-1/3  lg:left-1/2 lg:ml-4 lg:mb-0 lg:mt-0">
-        <img>
-        <h1 class=> Experience 2 </h1>
-        <p class>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat minima totamrepellat quis deserunt
-          impedit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat minima totamrepellat quis deserunt
-          impedit.</p>
-      </div>
-      <div
-        class="m-1 border-2 ml-3  relative bg-slate-300 rounded-lg text-black h-full border-solid p-4 lg:w-1/3 lg:left-48">
-        <h1 class=""> Experience 3 </h1>
-        <p class>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat minima totamrepellat quis deserunt
-          impedit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat minima totamrepellat quis deserunt
-          impedit.</p>
+        <div class="flex flex-col mb-4 md:mb-0 items-center p-6 space-y-6 rounded-lg bg-slate-300 md:w-1/4">
+          <img src="images/undraw_version_control_re_mg66.svg" alt="" class="md:h-1/2">
+          <a href="./quiz.html">
+            <h5 class="text-lg font-bold">App Development</h5>
+          </a>
+          <p class="text-sm text-grey">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, autem.
+          </p>
+        </div>
+        <div class="flex flex-col mb-4 md:mb-0 items-center p-6 space-y-6 rounded-lg bg-slate-300 md:w-1/4">
+          <img src="images/undraw_inspiration_re_ivlv.svg" alt="" class="md:h-1/2">
+          <h5 class="text-lg font-bold">Graphic design</h5>
+          <p class="text-sm text-grey">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, autem.
+          </p>
+        </div>
+        <div class="flex flex-col mb-4 md:mb-0 items-center p-6 space-y-6 rounded-lg bg-slate-300 md:w-1/4">
+          <img src="images/undraw_books_re_8gea.svg" alt="" class="md:h-1/2">
+          <h5 class="text-lg font-bold">Content writing</h5>
+          <p class="text-sm text-grey">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, autem.
+          </p>
+        </div>
       </div>
     </div>
-    <br><br>
-  
-    <!--Contact Me-->
-    <div id="contact-me" class="mt-12">
-      <h1 class="">Have an Project in Mind?</h1>
-      <form class=" lg:mx-28">
-        <div id="name" class="p-6">
-          <input type="text" name="fname" placeholder="First Name" required
-            class=" rounded-sm bg-slate-100 w-full text-gray-900 p-2">
-        </div>
-        <div class="p-6">
-          <input type="text" name="company" placeholder="Company(Optional)"
-            class="rounded-sm bg-slate-100 hover:border-b-4 hover:border-slate-500 w-full text-gray-900 p-2 justify-items-end">
-        </div>
-        <div id="contact" class="p-6">
-          <input type="number" name="phone" placeholder="Phone Number" required
-            class="rounded-sm bg-slate-100 w-full text-gray-900 p-2 justify-items-end">
-        </div>
-        <div class="p-6">
-          <input type="email" name="email" placeholder="Email-Id" required
-            class="rounded-sm bg-slate-100 w-full text-gray-900 p-2 justify-items-end">
-        </div>
-        <div class="p-6 h-40 lg:h-32">
-          <textarea placeholder="Tell me about your idea" required
-            class="rounded-sm bg-slate-100 w-full text-gray-900 p-2 h-full"></textarea>
-        </div>
-      </form>
+  </section>
+
+
+  <!--Experience-->
+  <h1 class="text-xl text-slate-200 text-center mt-24 mb-8 lg:text-4xl">This isn't my first Rodeo :)</h1>
+  <div id="exp-container" class=" relative m-2 lg:m-4">
+    <div id="scroll" class="h-3/4 w-0 absolute border-2 lg:left-1/2 top-14 border-slate-300  border-dotted">
+      <div class=" h-4 w-4 bg-slate-300 text-lg rounded-full -top-1 absolute lg:right-1/2"></div>
+      <div class=" h-4 w-4 bg-slate-300 text-lg rounded-full absolute top-1/2 lg:left-1/2"></div>
+      <div class=" h-4 w-4 bg-slate-300 text-lg rounded-full absolute -bottom-1 lg:right-1/2"></div>
     </div>
-    <div class="">
-      <button class=""><a
-        href="#contact-me">Contact Me</a>
+    <div class="m-1 ml-3 relative bg-cyan-900 rounded-lg text-white h-full p-4 lg:w-1/3 lg:left-48">
+      <img>
+      <h1 class=""> Experience1 </h1>
+      <p class>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat minima totamrepellat quis deserunt
+        impedit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat minima totamrepellat quis deserunt
+        impedit.</p>
+    </div>
+    <div
+      class="m-1 ml-3 mb-4 mt-4 relative bg-slate-500 rounded-lg text-white h-full p-4 lg:w-1/3  lg:left-1/2 lg:ml-4 lg:mb-0 lg:mt-0">
+      <img>
+      <h1 class=> Experience 2 </h1>
+      <p class>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat minima totamrepellat quis deserunt
+        impedit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat minima totamrepellat quis deserunt
+        impedit.</p>
+    </div>
+    <div
+      class="m-1 border-2 ml-3  relative bg-slate-300 rounded-lg text-black h-full border-solid p-4 lg:w-1/3 lg:left-48">
+      <h1 class=""> Experience 3 </h1>
+      <p class>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat minima totamrepellat quis deserunt
+        impedit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat minima totamrepellat quis deserunt
+        impedit.</p>
+    </div>
+  </div>
+  <br><br>
+
+  <!--Contact Me-->
+  <div id="contact-me" class="mt-12">
+    <h1 class="">Have an Project in Mind?</h1>
+    <form class=" lg:mx-28">
+      <div id="name" class="p-6">
+        <input type="text" name="fname" placeholder="First Name" required
+          class=" rounded-sm bg-slate-100 w-full text-gray-900 p-2">
+      </div>
+      <div class="p-6">
+        <input type="text" name="company" placeholder="Company(Optional)"
+          class="rounded-sm bg-slate-100 hover:border-b-4 hover:border-slate-500 w-full text-gray-900 p-2 justify-items-end">
+      </div>
+      <div id="contact" class="p-6">
+        <input type="number" name="phone" placeholder="Phone Number" required
+          class="rounded-sm bg-slate-100 w-full text-gray-900 p-2 justify-items-end">
+      </div>
+      <div class="p-6">
+        <input type="email" name="email" placeholder="Email-Id" required
+          class="rounded-sm bg-slate-100 w-full text-gray-900 p-2 justify-items-end">
+      </div>
+      <div class="p-6 h-40 lg:h-32">
+        <textarea placeholder="Tell me about your idea" required
+          class="rounded-sm bg-slate-100 w-full text-gray-900 p-2 h-full"></textarea>
+      </div>
+    </form>
+  </div>
+  <div class="">
+    <button class=""><a href="#contact-me">Contact Me</a>
     </button>
+  </div>
+
+  <!--Footer-->
+  <footer class="bg-gradient-to-r from-slate-500 ...  pt-4">
+
+    <h1 class="text-2xl text-slate-200 text-center m-12 lg:mb-16 lg:text-4xl">Let's Connect !!</h1>
+    <div id="media" class=" ">
+
+      <!--Media buttons-->
+
+      <a href="#" class=" text-3xl hover:scale-15 animate-bounce text-white"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook text-3xl hover:scale-150 text-white"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin  text-3xl hover:scale-150  text-white"></i></a>
+      <a href="#"><i class="fa-brands fa-discord  text-3xl hover:scale-150  text-white"></i></a>
     </div>
-  
-    <!--Footer-->
-    <footer class="bg-gradient-to-r from-slate-500 ...  pt-4">
-  
-      <h1 class="text-2xl text-slate-200 text-center m-12 lg:mb-16 lg:text-4xl">Let's Connect !!</h1>
-      <div id="media" class=" ">
-  
-        <!--Media buttons-->
-  
-        <a href="#" class=" text-3xl hover:scale-15 animate-bounce text-white"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-facebook text-3xl hover:scale-150 text-white"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin  text-3xl hover:scale-150  text-white"></i></a>
-        <a href="#"><i class="fa-brands fa-discord  text-3xl hover:scale-150  text-white"></i></a>
-      </div>
-    </footer>
-  </body>
-  <script src="js/index.js"></script>
+  </footer>
+</body>
+<script src="js/index.js"></script>
+
 </html>

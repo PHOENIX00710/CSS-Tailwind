@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+
+<body>
+    <p id="quiz">
+        Main Activity
+        <br>
+        package com.example.quizapp;
+        <br>
+        import static java.lang.Boolean.TRUE;
+        <br>
+        import androidx.appcompat.app.AppCompatActivity;
+        import androidx.recyclerview.widget.LinearLayoutManager;
+        import androidx.recyclerview.widget.RecyclerView;
+        <br>
+        import android.os.Bundle;
+        import android.view.View;
+        import android.widget.Button;
+        import android.widget.RadioGroup;
+        import android.widget.TextView;
+        import android.widget.Toast;
+        <br>
+        import java.lang.reflect.Array;
+        import java.util.ArrayList;
+        <br>
+        public class MainActivity extends AppCompatActivity {
+        <br>
+        RecyclerView recyclerView;
+        <br>
+        static ArrayList<QuizModel> quiz;
+            <br>
+            static int[] answers=new int[]{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
+            <br>
+            double score=0;
+            <br>
+            static int attempt=0;
+            <br>
+            Button submit;
+            <br>
+
+            @Override
+            <br>
+            protected void onCreate(Bundle savedInstanceState) {
+            <br>
+            super.onCreate(savedInstanceState);
+            <br>
+            setContentView(R.layout.activity_main);
+            <br>
+            recyclerView=findViewById(R.id.questionlist);
+            <br>
+            submit=findViewById(R.id.Submit);
+            <br>
+            quiz=new ArrayList<>();
+                <br>
+                quiz.add(new QuizModel("Capital Of India is Mumbai",false));
+                <br>
+                quiz.add(new QuizModel("Sarthak Randi Hai",true));
+                <br>
+
+                quiz.add(new QuizModel("Akul ka sabse bada aur rasila gaand hai",true));
+                <br>
+
+                quiz.add(new QuizModel("Main chutiya hoon", true));
+                <br>
+                QuizAdapter adapter=new QuizAdapter(quiz,this);
+                <br>
+                recyclerView.setAdapter(adapter);
+                <br>
+                LinearLayoutManager linearLayoutManager=new LinearLayoutManager
+                <br>(MainActivity.this);
+                <br>
+                recyclerView.setLayoutManager(linearLayoutManager);
+                <br>
+                submit.setOnClickListener(new View.OnClickListener() {
+                <br>
+                @Override
+                <br>
+                public void onClick(View v) {
+                <br>
+                attempt=0;
+                <br>
+                score=0;
+                <br>
+                String a="";
+                <br>
+                for(int i=0;i< quiz.size();i++){ <br>
+                    if(answers[i]!=-1){ attempt++;
+                    <br>
+                    }
+                    <br>
+                    if((answers[i]==1 && quiz.get(i).getAnswer() )|| (answers[i]==0 && !quiz.get(i).getAnswer())){
+                    <br>
+                    score=score+1;
+                    <br>
+                    }
+                    <br>
+                    else if(answers[i]!=-1) {
+                    <br>
+                    score=score-0.5;
+                    <br>
+                    } }
+                    <br>
+                    //Toast.makeText(MainActivity.this, "" +a,
+                    <br>
+                    Toast.LENGTH_SHORT).show();
+                    <br>
+                    Toast.makeText(MainActivity.this, "Attempted Questions are : "
+                    +attempt+" Score is : "+score, Toast.LENGTH_SHORT).show();
+                    <br>
+                    }
+                    <br>
+                    });
+
+                    <br>
+
+
+                    }
+                    <br>
+                    }
+
+
+                    <br>
+
+
+                    _______________________________________________________________________________________________________________________________________
+
+                    Quiz Model
+                    <br>
+
+                    package com.example.quizapp;
+
+                    public class QuizModel {
+                    String Question;
+                    Boolean answer;
+
+                    public QuizModel(String question, Boolean answer) {
+                    Question = question;
+                    this.answer = answer;
+                    }
+
+                    public String getQuestion() {
+                    return Question;
+                    }
+
+                    public void setQuestion(String question) {
+                    Question = question;
+                    }
+
+                    public Boolean getAnswer() {
+                    return answer;
+                    }
+
+                    public void setAnswer(Boolean answer) {
+                    this.answer = answer;
+                    }
+                    }
+
+                    _________________________________________________________________________________________________________________________________________
+
+
+                    Quiz Adapter
+
+                    package com.example.quizapp;
+
+                    import android.content.Context;
+                    import android.view.LayoutInflater;
+                    import android.view.View;
+                    import android.view.ViewGroup;
+                    import android.widget.RadioButton;
+                    import android.widget.RadioGroup;
+                    import android.widget.TextView;
+
+                    import androidx.annotation.NonNull;
+                    import androidx.recyclerview.widget.RecyclerView;
+
+                    import java.util.ArrayList;
+                    import java.util.zip.Inflater;
+
+                    public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.viewHolder>{
+                        ArrayList<QuizModel> quizModels;
+
+                            Context context;
+
+                            public QuizAdapter(ArrayList<QuizModel> quizModels, Context context) {
+                                this.quizModels = quizModels;
+                                this.context = context;
+                                }
+
+                                @NonNull
+                                @Override
+                                public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                                View view= LayoutInflater.from(context).inflate(R.layout.quiz_layout,parent,false);
+                                return new viewHolder(view);
+                                }
+
+                                @Override
+                                public void onBindViewHolder(@NonNull viewHolder holder, int position) {
+                                QuizModel model=quizModels.get(position);
+                                holder.question.setText(model.getQuestion());
+                                holder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                @Override
+                                public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                if(holder.choicetrue.getId() == checkedId){
+                                MainActivity.answers[holder.getAdapterPosition()]=1;
+
+                                }
+                                if(holder.choicefalse.getId()==checkedId){
+                                MainActivity.answers[holder.getAdapterPosition()]=0;
+
+                                }
+                                }
+                                });
+
+
+                                }
+
+                                @Override
+                                public int getItemCount() {
+                                return quizModels.size();
+                                }
+
+                                public class viewHolder extends RecyclerView.ViewHolder{
+                                TextView question;
+                                RadioGroup radioGroup;
+                                RadioButton choicetrue;
+                                RadioButton choicefalse;
+
+
+                                public viewHolder(@NonNull View itemView) {
+                                super(itemView);
+                                question=itemView.findViewById(R.id.Question);
+                                radioGroup=itemView.findViewById(R.id.Option);
+                                choicetrue=itemView.findViewById(R.id.True);
+                                choicefalse=itemView.findViewById(R.id.False);
+
+
+                                }
+                                }
+                                }
+
+    </p>
+    <button id="btn2">Download</button>
+    <script src="./index2.js"></script>
+</body>
+
+</html>
